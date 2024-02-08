@@ -1,14 +1,19 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
+
 export const Header = () => {
   return (
     <div className='header-container'>
       <div className='upper-header'>
-        <img id='logo' src='/logo.png' />
+        <Link to='/'>
+          <img id='logo' src='/logo.png' alt='Logo' />
+        </Link>
         <div className='links'>
-          <a href='#'>Products</a>
-          <a href='#'>JEWELRY</a>
-          <a href='#'>Men</a>
-          <a href='#'>Women</a>
-          <img id='shopping-cart-icon' src='/cart.svg' />
+          <Link to='/products'>Products</Link>
+          <Link to='jewelry'>JEWELRY</Link>
+          <Link to='men'>Men</Link>
+          <Link to='women'>Women</Link>
+          <img id='shopping-cart-icon' src='/cart.svg' alt='Shopping Cart' />
         </div>
       </div>
       <div className='lower-header'></div>
