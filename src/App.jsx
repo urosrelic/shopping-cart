@@ -1,8 +1,7 @@
 import './App.css';
 import { Carousel } from './components/Carousel';
 import { Header } from './components/Header';
-import { MenSection } from './components/MenSection';
-import { WomenSection } from './components/WomenSection';
+import { Section } from './components/Section';
 
 function App() {
   return (
@@ -10,8 +9,7 @@ function App() {
       <Header />
       <div className='content'>
         <Carousel />
-        <MenSection />
-        <WomenSection />
+        <Section />
       </div>
     </div>
   );
