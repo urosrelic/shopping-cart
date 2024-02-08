@@ -29,7 +29,7 @@ export const useProducts = (filter) => {
       })
       .catch((error) => setError(error))
       .finally(() => setLoading(false));
-  }, []);
+  }, [filter]);
 
   return { products, error, loading };
 };
