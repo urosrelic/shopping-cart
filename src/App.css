@@ -1,0 +1,135 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* App */
+.App {
+  display: flex;
+  flex-direction: column;
+}
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Header */
+.header-container {
+  padding: 5px 35px;
+  display: flex;
+  flex-direction: column;
+}
+
+.upper-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#logo {
+  width: 150px;
+}
+
+.links {
+  width: 600px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  text-transform: uppercase;
+  justify-content: space-between;
+}
+
+.links a {
+  text-decoration: none;
+  color: black;
+  position: relative;
+  transition: transform 250ms;
+  font-size: 24px;
+}
+
+.links a::before {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: black;
+  transition: width 250ms ease;
+}
+
+.links a:hover::before {
+  width: 100%;
+}
+
+.links a:hover {
+  transform: translateY(-5px);
+}
+
+#shopping-cart-icon {
+  cursor: pointer;
+  width: 50px;
+}
+
+/* Carousel */
+.carousel-container {
+  width: 100%;
+  background-color: #2f2e2c;
+  height: 650px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  font-size: 48px;
+}
+
+/* Sections */
+.section-container {
+  margin: 25px 0;
+  width: 70%;
+  height: 850px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 48px;
+}
+
+.section-title {
+  margin: 25px;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.section-title a {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: black;
+}
+
+.section-image {
+  width: 70%;
+  height: 100%;
+}
+
+.section-image img {
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+}
+
+.see-now-link {
+  text-decoration: none;
+  color: #2f2e2c;
+  transition: transform 0.3s ease, ease-in 0.3s color;
+}
+
+.see-now-link:hover {
+  transform: translateX(5px);
+  color: #588b8b;
+}
