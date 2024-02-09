@@ -143,13 +143,29 @@ body {
 }
 
 /* Products */
+.products-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.filter-container {
+  text-transform: uppercase;
+  font-size: 24px;
+}
+
+.filter-container select {
+  margin-top: 15px;
+  margin-left: 15px;
+  text-transform: uppercase;
+  font-size: 24px;
+}
+
 .products-container {
   background-color: #e7dfd4;
   margin-top: 50px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  align-items: center;
-  justify-items: center; /* adjusted */
   gap: 50px;
 }
 
