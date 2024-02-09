@@ -12,7 +12,12 @@ export const Products = () => {
     <div className='products-page'>
       <div className='filter-container'>
         Choose category:
-        <select onChange={(e) => setFilter(e.target.value)}>
+        <select
+          onChange={(e) =>
+            setFilter(e.target.value === 'All' ? null : e.target.value)
+          }
+        >
+          <option value='All'>All</option>
           {categories &&
             categories.length > 0 &&
             categories.map((category, index) => (
