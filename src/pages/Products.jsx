@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { ProductItem } from '../components/ProductItem';
 import { useProducts } from '../hooks/useProducts';
 import { useCategories } from '../hooks/useCategories';
