@@ -4,6 +4,7 @@ import { Home } from './pages/Home';
 import { Header } from './components/Header';
 import { Products } from './pages/Products';
 import { Cart } from './pages/Cart';
+import { ErrorPage } from './pages/ErrorPage';
 
 function App() {
   return (
@@ -14,7 +15,7 @@ function App() {
           <Route path='/' element={<Home />} />
           <Route path='/products' element={<Products />} />
           <Route path='/cart' element={<Cart />} />
-          <Route path='*' element={<h1>PAGE NOT FOUND</h1>} />
+          <Route path='*' element={<ErrorPage message={'PAGE NOT FOUND'} />} />
         </Routes>
       </Router>
     </div>

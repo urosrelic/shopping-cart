@@ -15,6 +15,14 @@ body {
   flex-direction: column;
 }
 
+/* Error page */
+.error-page-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 /* Header */
 .header-container {
   padding: 5px 35px;
