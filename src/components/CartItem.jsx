@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 /* eslint-disable react/prop-types */
 export const CartItem = ({ item }) => {
@@ -6,6 +6,12 @@ export const CartItem = ({ item }) => {
   const maxVal = 5;
 
   const [quantity, setQuantity] = useState(item.quantity);
+  const [price, setPrice] = useState(item.price);
+
+  useEffect(() => {
+    // Update the price whenever the quantity changes
+    setPrice(quantity * item.price);
+  }, [quantity, item.price]);
 
   const handleIncrement = () => {
     if (quantity < maxVal) {
@@ -32,13 +38,17 @@ export const CartItem = ({ item }) => {
         <div className='cart-item-quantity'>
           <p>Quantity</p>
           <div className='quantity-input'>
-            <button onClick={handleDecrement}>-</button>
-            {quantity}
-            <button onClick={handleIncrement}>+</button>
+            <button id='decrement-btn' onClick={handleDecrement}>
+              -
+            </button>
+            <span id='product-quantity'>{quantity}</span>
+            <button id='increment-btn' onClick={handleIncrement}>
+              +
+            </button>
           </div>
         </div>
         <div className='cart-item-price'>
-          <p>Total</p> ${item.price}
+          <p>Total</p> ${price}
         </div>
         <div className='remove-from-cart-button'>Remove</div>
       </div>
