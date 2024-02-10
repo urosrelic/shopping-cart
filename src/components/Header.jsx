@@ -13,7 +13,9 @@ export const Header = () => {
           <Link to='jewelry'>JEWELRY</Link>
           <Link to='men'>Men</Link>
           <Link to='women'>Women</Link>
-          <img id='shopping-cart-icon' src='/cart.svg' alt='Shopping Cart' />
+          <Link to='cart'>
+            <img id='shopping-cart-icon' src='/cart.svg' alt='Shopping Cart' />
+          </Link>
         </div>
       </div>
       <div className='lower-header'></div>
