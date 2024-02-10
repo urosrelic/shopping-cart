@@ -1,3 +1,5 @@
+import { CartItem } from '../components/CartItem';
+
 /* eslint-disable react/prop-types */
 export const Cart = ({ cart }) => {
   return (
@@ -5,19 +7,7 @@ export const Cart = ({ cart }) => {
       <div className='shopping-list'>
         <ul>
           {cart.map((item) => (
-            <li key={item.id}>
-              <div className='cart-item'>
-                <div className='cart-item-image'>
-                  <img src={item.image} />
-                </div>
-                <div className='cart-item-info'>
-                  <div className='cart-item-title'>{item.title}</div>
-                  <div className='cart-item-quantity'>
-                    Quantity: {item.quantity}
-                  </div>
-                </div>
-              </div>
-            </li>
+            <CartItem key={item.id} item={item} />
           ))}
         </ul>
       </div>
