@@ -1,11 +1,13 @@
+import { Link } from 'react-router-dom';
+
 export const Section = () => {
   return (
     <div className='section-container'>
       <div className='male-container-text'>
         Men&apos;s clothing
-        <a href='#' className='see-now-link'>
+        <Link to='men' className='see-now-link'>
           See now &gt;&gt;
-        </a>
+        </Link>
       </div>
       <div className='male-container-image'>
         {' '}
@@ -18,9 +20,9 @@ export const Section = () => {
       <div className='female-container-text'>
         {' '}
         Women&apos;s clothing
-        <a href='#' className='see-now-link'>
+        <Link to='women' className='see-now-link'>
           See now &gt;&gt;
-        </a>
+        </Link>
       </div>
     </div>
   );
