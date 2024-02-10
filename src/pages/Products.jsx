@@ -1,12 +1,26 @@
+/* eslint-disable react/prop-types */
 import { useState } from 'react';
 import { ProductItem } from '../components/ProductItem';
 import { useProducts } from '../hooks/useProducts';
 import { useCategories } from '../hooks/useCategories';
-export const Products = () => {
+export const Products = ({ cart, setCart }) => {
   const [filter, setFilter] = useState(null);
 
   const { categories, categoriesError, categoriesLoading } = useCategories();
   const { products, productsError, productsLoading } = useProducts(filter);
+
+  const addToCart = (product) => {
+    const existingCartItem = cart.find((item) => item.id === product.id);
+
+    if (existingCartItem) {
+      const updatedCart = cart.map((item) =>
+        item.id === product.id ? { ...item, quantity: item.quantity + 1 } : item
+      );
+      setCart(updatedCart);
+    } else {
+      setCart([...cart, { ...product, quantity: 1 }]);
+    }
+  };
 
   return (
     <div className='products-page'>
@@ -33,7 +47,11 @@ export const Products = () => {
         {products &&
           products.length > 0 &&
           products.map((product) => (
-            <ProductItem key={product.id} productData={product} />
+            <ProductItem
+              key={product.id}
+              productData={product}
+              addToCart={addToCart}
+            />
           ))}
         {productsLoading && <p>Loading products...</p>}
         {productsError && <p>Error: {productsError.message}</p>}
