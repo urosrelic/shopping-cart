@@ -12,12 +12,7 @@ export const Products = ({ cart, setCart }) => {
   const addToCart = (product) => {
     const existingCartItem = cart.find((item) => item.id === product.id);
 
-    if (existingCartItem) {
-      const updatedCart = cart.map((item) =>
-        item.id === product.id ? { ...item, quantity: item.quantity + 1 } : item
-      );
-      setCart(updatedCart);
-    } else {
+    if (!existingCartItem) {
       setCart([...cart, { ...product, quantity: 1 }]);
     }
   };
