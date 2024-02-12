@@ -32,24 +32,20 @@ export const CartItem = ({ item, removeFromCart }) => {
           <img src={item.image} />
         </div>
         <div className='cart-item-title'>
-          <p>Name:</p>
           <span>{item.title}</span>
         </div>
         <div className='cart-item-quantity'>
-          <p>Quantity</p>
           <div className='quantity-input'>
             <button id='decrement-btn' onClick={handleDecrement}>
-              -
+              &lt;
             </button>
             <span id='product-quantity'>{quantity}</span>
             <button id='increment-btn' onClick={handleIncrement}>
-              +
+              &gt;
             </button>
           </div>
         </div>
-        <div className='cart-item-price'>
-          <p>Total</p> ${price}
-        </div>
+        <div className='cart-item-price'>${price}</div>
         <div className='remove-from-cart-button' onClick={removeFromCart}>
           Remove
         </div>
