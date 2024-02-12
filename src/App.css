@@ -248,7 +248,7 @@ body {
 }
 
 .cart-container h1 {
-  text-align: center;
+  text-transform: uppercase;
 }
 
 .cart-container ul {

@@ -46,6 +46,7 @@ export const Products = ({ cart, setCart }) => {
               key={product.id}
               productData={product}
               addToCart={addToCart}
+              cart={cart}
             />
           ))}
         {productsLoading && <p>Loading products...</p>}

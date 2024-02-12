@@ -1,7 +1,14 @@
 /* eslint-disable react/prop-types */
-import { useState } from 'react';
-export const ProductItem = ({ productData, addToCart }) => {
+import { useState, useEffect } from 'react';
+
+export const ProductItem = ({ productData, addToCart, cart }) => {
   const [inCart, setInCart] = useState(false);
+
+  useEffect(() => {
+    // Check if the product is in the cart when the cart or productData changes
+    const isItemInCart = cart.some((item) => item.id === productData.id);
+    setInCart(isItemInCart);
+  }, [cart, productData]);
 
   const handleAddToCart = () => {
     addToCart(productData);
@@ -17,7 +24,6 @@ export const ProductItem = ({ productData, addToCart }) => {
         </div>
         <div className='product-price'>${productData.price}</div>
       </div>
-      {}
       <div id='add-to-cart-btn' onClick={() => handleAddToCart()}>
         {inCart ? 'Already in cart' : 'Add to Cart'}
       </div>

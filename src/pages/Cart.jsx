@@ -14,19 +14,19 @@ export const Cart = ({ cart, setCart }) => {
 
   return (
     <div className='cart-container'>
-      <ul>
-        {cart.length > 0 ? (
-          cart.map((item) => (
+      {cart.length > 0 ? (
+        <ul>
+          {cart.map((item) => (
             <CartItem
               key={item.id}
               item={item}
               removeFromCart={() => removeFromCart(item.id)}
             />
-          ))
-        ) : (
-          <h2>Empty cart</h2>
-        )}
-      </ul>
+          ))}
+        </ul>
+      ) : (
+        <h1>Empty Cart</h1>
+      )}
     </div>
   );
 };
