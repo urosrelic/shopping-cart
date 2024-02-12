@@ -19,7 +19,10 @@ function App() {
             path='/products'
             element={<Products cart={cart} setCart={setCart} />}
           />
-          <Route path='/cart' element={<Cart cart={cart} />} />
+          <Route
+            path='/cart'
+            element={<Cart cart={cart} setCart={setCart} />}
+          />
           <Route path='*' element={<ErrorPage message={'PAGE NOT FOUND'} />} />
         </Routes>
       </Router>

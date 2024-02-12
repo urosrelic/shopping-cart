@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 
 /* eslint-disable react/prop-types */
-export const CartItem = ({ item }) => {
+export const CartItem = ({ item, removeFromCart }) => {
   const minVal = 1;
   const maxVal = 5;
 
@@ -50,7 +50,9 @@ export const CartItem = ({ item }) => {
         <div className='cart-item-price'>
           <p>Total</p> ${price}
         </div>
-        <div className='remove-from-cart-button'>Remove</div>
+        <div className='remove-from-cart-button' onClick={removeFromCart}>
+          Remove
+        </div>
       </div>
     </li>
   );
