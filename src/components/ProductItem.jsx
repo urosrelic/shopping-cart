@@ -24,7 +24,11 @@ export const ProductItem = ({ productData, addToCart, cart }) => {
         </div>
         <div className='product-price'>${productData.price}</div>
       </div>
-      <div id='add-to-cart-btn' onClick={() => handleAddToCart()}>
+      <div
+        id='add-to-cart-btn'
+        onClick={() => handleAddToCart()}
+        className={inCart ? 'in-cart' : 'not-in-cart'}
+      >
         {inCart ? 'Already in cart' : 'Add to Cart'}
       </div>
     </div>

@@ -227,16 +227,25 @@ body {
   text-transform: uppercase;
   border-radius: 5px;
   border: none;
-  background-color: black;
   color: white;
   cursor: pointer;
   text-align: center;
   transition: all 0.2s;
 }
 
-#add-to-cart-btn:hover {
+.not-in-cart:hover {
   background-color: #588b8b;
   color: white;
+}
+
+.in-cart {
+  background-color: #588b8b;
+  transition: all 0.2s;
+}
+
+.not-in-cart {
+  background-color: black;
+  transition: all 0.2s;
 }
 
 /* Cart */
