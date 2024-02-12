@@ -6,7 +6,7 @@ const API_URL = 'https://fakestoreapi.com/products';
 export const useProducts = (filter) => {
   const [products, setProducts] = useState(null);
   const [error, setError] = useState(null);
-  const [loading, setLoading] = useState(true);
+  const [productsLoading, setProductsLoading] = useState(true);
 
   useEffect(() => {
     fetch(API_URL)
@@ -28,8 +28,8 @@ export const useProducts = (filter) => {
         setProducts(filteredData);
       })
       .catch((error) => setError(error))
-      .finally(() => setLoading(false));
+      .finally(() => setProductsLoading(false));
   }, [filter]);
 
-  return { products, error, loading };
+  return { products, error, productsLoading };
 };

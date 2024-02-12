@@ -4,8 +4,8 @@ const API_URL = 'https://fakestoreapi.com/products/categories';
 
 export const useCategories = () => {
   const [categories, setCategories] = useState(null);
-  const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [categoriesLoading, setCategoriesLoading] = useState(true);
 
   useEffect(() => {
     fetch(API_URL)
@@ -22,8 +22,8 @@ export const useCategories = () => {
         setCategories(noElectronicsData);
       })
       .catch((error) => setError(error))
-      .finally(() => setLoading(false));
+      .finally(() => setCategoriesLoading(false));
   }, []);
 
-  return { categories, error, loading };
+  return { categories, error, categoriesLoading };
 };

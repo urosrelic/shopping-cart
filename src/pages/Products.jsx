@@ -20,6 +20,8 @@ export const Products = ({ cart, setCart }) => {
   return (
     <div className='products-page'>
       <div className='filter-container'>
+        {categoriesLoading && <p>Loading categories...</p>}
+        {categoriesError && <p>Error: {categoriesError.message}</p>}
         Choose category:
         <select
           onChange={(e) =>
@@ -35,10 +37,10 @@ export const Products = ({ cart, setCart }) => {
               </option>
             ))}
         </select>
-        {categoriesLoading && <p>Loading categories...</p>}
-        {categoriesError && <p>Error: {categoriesError.message}</p>}
       </div>
       <div className='products-container'>
+        {productsLoading && <h1>Loading products...</h1>}
+        {productsError && <p>Error: {productsError.message}</p>}
         {products &&
           products.length > 0 &&
           products.map((product) => (
@@ -49,8 +51,6 @@ export const Products = ({ cart, setCart }) => {
               cart={cart}
             />
           ))}
-        {productsLoading && <p>Loading products...</p>}
-        {productsError && <p>Error: {productsError.message}</p>}
       </div>
     </div>
   );
