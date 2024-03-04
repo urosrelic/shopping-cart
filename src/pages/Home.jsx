@@ -1,10 +1,10 @@
 import { Section } from '../components/Section';
-import { Carousel } from '../components/Carousel';
+import { ImageSlider } from '../components/ImageSlider';
 
 export const Home = () => {
   return (
     <div className='home-container'>
-      <Carousel />
+      <ImageSlider />
       <Section />
     </div>
   );
